@@ -1696,7 +1696,7 @@
           TIETKHI[getSunLongitude(currentLunarDate.jd + 1, 7.0)] +
           "</strong></span><br>\n";
         res +=
-          "            <span>PL: <strong>" +
+          "            <span>Phật lịch: <strong>" +
           getPhatLich() +
           "</strong></span>\n";
         res += "          </td>\n";
@@ -1722,7 +1722,12 @@
           " &nbsp;" +
           getPrevMonthLink(mm, yy) +
           "</td>\n";
-        res += '  <td colspan="3" class="tenthang">' + monthName + "</td>\n";
+        res +=
+          '  <td colspan="3" class="tenthang" data-args=' +
+          getTenThangArgs() +
+          ">" +
+          monthName +
+          "</td>\n";
         res +=
           '  <td colspan="2" class="navi-r">' +
           getNextMonthLink(mm, yy) +
@@ -1847,7 +1852,23 @@
     res += "</td>\n";
     return res;
   }
-
+  function getTenThangArgs() {
+    var solarDate = today.getDate();
+    var solarMonth = today.getMonth() + 1;
+    var solarYear = today.getFullYear();
+    var lunarDate = getLunarDate(solarDate, solarMonth, solarYear);
+    var args =
+      lunarDate.day +
+      "," +
+      lunarDate.month +
+      "," +
+      lunarDate.year +
+      "," +
+      lunarDate.leap;
+    args +=
+      "," + lunarDate.jd + "," + solarDate + "," + solarMonth + "," + solarYear;
+    return args;
+  }
   $.fn.amLich = function (options) {
     settings = $.extend(
       {
@@ -1889,7 +1910,7 @@
             s += "◊ Giờ đầu ngày " + (getCanHour0(jd) + " " + CHI[0]) + "\n";
             s += "◊ Tiết " + TIETKHI[getSunLongitude(jd + 1, 7.0)] + "\n";
             s += "◊ Giờ hoàng đạo: " + getGioHoangDao(jd) + "\n";
-            s += "◊ PL: " + getPhatLich(dd, mm, yy) + "\n";
+            s += "◊ Phật lịch: " + getPhatLich(dd, mm, yy) + "\n";
             s += holiday != "" ? "◊ " + holiday : "";
             alert(s);
             break;
@@ -1927,7 +1948,7 @@
               TIETKHI[getSunLongitude(jd + 1, 7.0)] +
               "</strong></span><br>";
             s +=
-              "<span>PL: <strong>" +
+              "<span>Phật lịch: <strong>" +
               getPhatLich(dd, mm, yy) +
               "</strong></span>\n";
             $this.find(".calendar .calendar-b-right").html(s);
