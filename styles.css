@@ -27,7 +27,6 @@ html {
   color: #000000;
   background-color: #cccccc;
   font-size: 0.8rem;
-  font-family: Roboto, sans-serif;
 }
 .amlich .calendar-month,
 .amlich .calendar-b-left,
@@ -42,7 +41,6 @@ html {
 }
 .amlich .calendar-day .day-num {
   font-size: 5rem;
-  font-family: Roboto, sans-serif;
   line-height: 100%;
   color: #ff0028;
 }
@@ -160,25 +158,30 @@ html {
   text-align: right;
   font-size: 90%;
   color: #554c00;
+  padding-right: 0.8rem;
 }
 .amlich .am2 {
   text-align: right;
   font-size: 90%;
   color: #337ab7;
   font-weight: bold;
+  padding-right: 0.8rem;
 }
 .amlich .t2t6 {
   text-align: left;
   color: #5a5c5b;
   font-weight: bold;
+  padding-left: 0.8rem;
 }
 .amlich .t7 {
   font-weight: bold;
   text-align: left;
   color: blue;
+  padding-left: 0.8rem;
 }
 .amlich .cn {
   font-weight: bold;
   text-align: left;
   color: red;
+  padding-left: 0.8rem;
 }
