@@ -33,7 +33,6 @@ html {
 .amlich .calendar-b-right {
   text-align: center;
   padding: 0.4rem 0;
-  font-size: 1rem;
 }
 .amlich .calendar-day {
   text-align: center;
@@ -45,10 +44,14 @@ html {
   color: #ff0028;
 }
 .amlich .lunar-day-num {
-  font-size: 2rem;
+  font-size: 3rem;
   line-height: 100%;
   font-weight: bold;
   color: #ff0028;
+}
+.amlich .lunar-month-name,
+.amlich .lunar-year-name {
+  font-size: 1.5rem;
 }
 .amlich .calendar-holiday,
 .amlich .calendar-hoangdao {
